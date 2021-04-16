@@ -5,26 +5,26 @@ namespace Landingi\Tests\ApiBundle\Fake\Doctrine;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Driver;
-use Doctrine\DBAL\Driver\API\ExceptionConverter;
-use Doctrine\DBAL\Driver\Connection as DriverConnection;
-use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Schema\AbstractSchemaManager;
 
 final class FakeDriver implements Driver
 {
-    public function connect(array $params): DriverConnection
+    public function getName()
     {
     }
 
-    public function getDatabasePlatform(): AbstractPlatform
+    public function getDatabase(Connection $conn)
     {
     }
 
-    public function getSchemaManager(Connection $conn, AbstractPlatform $platform): AbstractSchemaManager
+    public function connect(array $params, $username = null, $password = null, array $driverOptions = [])
     {
     }
 
-    public function getExceptionConverter(): ExceptionConverter
+    public function getDatabasePlatform()
+    {
+    }
+
+    public function getSchemaManager(Connection $conn)
     {
     }
 }
