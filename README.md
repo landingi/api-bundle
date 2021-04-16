@@ -9,7 +9,6 @@ Automates and simplify API development.
 landingi_api:
     pagination:
         default_limit: 10
-
 ```
 
 2. To `config/bundles.php` add:
