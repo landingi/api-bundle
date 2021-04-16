@@ -1,2 +1,5 @@
 includes:
 	- vendor/landingi/php-coding-standards/phpstan.neon
+parameters:
+	excludePaths:
+		- tests/Fake/Doctrine/FakeDriver.php
