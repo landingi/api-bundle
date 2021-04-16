@@ -1,0 +1,32 @@
+{
+    "name": "landingi/api-bundle",
+    "description": "Landingi API bundle",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Landingi\\ApiBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Landingi\\Tests\\ApiBundle\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "symfony/framework-bundle": "^5.2"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^9.5",
+        "landingi/php-coding-standards": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafał Strzelbicki",
+            "email": "rafal.strzelbicki@landingi.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
