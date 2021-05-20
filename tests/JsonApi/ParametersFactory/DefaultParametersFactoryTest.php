@@ -56,4 +56,36 @@ class DefaultParametersFactoryTest extends TestCase
         yield [$page = 2, $limit = 20, $offset = 20, "?page[number]=$page&page[limit]=$limit"];
         yield [$page = 3, $limit = 20, $offset = 40, "?page[number]=$page&page[limit]=$limit"];
     }
+
+    /**
+     * @dataProvider sortUriProvider
+     */
+    public function testSort(array $sort, string $uri): void
+    {
+        // arrange
+        $request = Request::create($uri);
+        $factory = new DefaultParametersFactory();
+
+        // act
+        $parameters = $factory->create($request);
+
+        // assert
+        $this->assertEquals(
+            $sort,
+            $parameters->getSort()
+        );
+    }
+
+    public function sortUriProvider(): Generator
+    {
+        yield [$sort = [], ''];
+        yield [$sort = [], '?sort= '];
+        yield [$sort = [], '?sort=,,'];
+        yield [$sort = [], '?sort=-,-,'];
+        yield [$sort = [], '?sort=-name-,-age-'];
+        yield [$sort = ['name' => 'ASC'], '?sort=name,_age'];
+        yield [$sort = ['name' => 'ASC', 'age' => 'ASC'], '?sort=name,age'];
+        yield [$sort = ['name' => 'DESC', 'age' => 'DESC'], '?sort=-name,-age'];
+        yield [$sort = ['name' => 'ASC', 'age' => 'DESC'], '?sort=name,-age,'];
+    }
 }
