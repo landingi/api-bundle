@@ -5,6 +5,9 @@ namespace Landingi\ApiBundle\JsonApi\ParametersFactory;
 
 use InvalidArgumentException;
 
+/**
+ * @see https://jsonapi.org/format/#document-member-names
+ */
 final class MemberName
 {
     public function __construct(private string $name)
