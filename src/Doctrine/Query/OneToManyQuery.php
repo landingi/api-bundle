@@ -7,6 +7,7 @@ use Doctrine\DBAL\Query\Expression\CompositeExpression;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Landingi\ApiBundle\Doctrine\Query;
 
+// TODO Refactor this hell
 final class OneToManyQuery implements Query
 {
     public function getResult(QueryBuilder $queryBuilder): array
