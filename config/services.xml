@@ -8,5 +8,8 @@
             <argument>%landingi.api_bundle.pagination.default_limit%</argument>
             <tag name="controller.argument_value_resolver" />
         </service>
+        <service id="Landingi\ApiBundle\ArgumentResolver\JsonApiParametersResolver">
+            <tag name="controller.argument_value_resolver" />
+        </service>
     </services>
 </container>
